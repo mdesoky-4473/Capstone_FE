@@ -8,13 +8,13 @@ export default function Home() {
       try {
         const response = await fetch("http://localhost:3000/api/products");
         const data = await response.json(); // <- product data in JSON format
-        setProducts(data); // <- save data to state
+        setProducts(data); 
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
 
-    fetchProducts(); // Call the async function
+    fetchProducts();
   }, []);
 
   return (
