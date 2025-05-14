@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+const BASE = import.meta.env.VITE_API_BASE;
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
@@ -14,7 +15,7 @@ export default function Cart() {
       }
   
       try {
-        const res = await fetch("http://localhost:3000/api/cart", {
+        const res = await fetch(`${BASE}/api/cart`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

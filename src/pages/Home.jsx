@@ -4,10 +4,12 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [message, setMessage] = useState("");
 
+  const BASE = import.meta.env.VITE_API_BASE;
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/products");
+        const response = await fetch(`${BASE}/api/products`);
         const data = await response.json(); // <- product data in JSON format
         setProducts(data); 
       } catch (error) {
@@ -27,7 +29,7 @@ export default function Home() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/cart", {
+      const res = await fetch(`${BASE}/api/cart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

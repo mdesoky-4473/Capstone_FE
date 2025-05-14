@@ -1,5 +1,5 @@
-// src/pages/SignUp.jsx
 import { useState } from "react";
+const BASE = import.meta.env.VITE_API_BASE;
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -9,7 +9,7 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3000/api/auth/signup", {
+      const res = await fetch(`${BASE}/api/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
