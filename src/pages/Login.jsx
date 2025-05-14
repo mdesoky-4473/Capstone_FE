@@ -47,7 +47,7 @@ export default function Login() {
       {isLoggedIn ? (
         <>
           <p>You are logged in.</p>
-          <button onClick={handleLogout}>Logout</button>
+          <button className ="primary-button" onClick={handleLogout}>Logout</button>
         </>
       ) : (
         <form onSubmit={handleLogin}>
@@ -65,7 +65,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             required
           /><br />
-          <button type="submit">Login</button>
+          <button className="primary-button" type="submit">Login</button>
         </form>
       )}
 

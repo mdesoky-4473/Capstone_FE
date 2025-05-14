@@ -53,9 +53,9 @@ export default function Home() {
       {message && <p style={{ color: "green" }}>{message}</p>}
       <ul>
         {products.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="product-row">
             {item.name} - ${item.price}{" "}
-            <button onClick={() => handleAddToCart(item.id)}>Add to Cart</button>
+            <button className="primary-button" onClick={() => handleAddToCart(item.id)}>Add to Cart</button>
           </li>
         ))}
       </ul>
