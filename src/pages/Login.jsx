@@ -7,6 +7,9 @@ export default function Login() {
   const [message, setMessage] = useState("");
 
   const handleLogin = async (e) => {
+
+    setMessage("Loading... (backend may be waking up)");
+    
     e.preventDefault();
     try {
       const res = await fetch(`${BASE}/api/auth/login`, {
