@@ -97,7 +97,7 @@ export default function Cart() {
               }
               style={{ width: "60px", margin: "0 10px" }}
             />
-            <button onClick={() => handleRemove(item.productId)}>Remove</button>
+            <button className="primary-button" onClick={() => handleRemove(item.productId)}>Remove</button>
           </li>
         ))}
       </ul>
