@@ -2,6 +2,7 @@ import { useState } from "react";
 const BASE = import.meta.env.VITE_API_BASE;
 
 export default function SignUp() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -14,7 +15,7 @@ export default function SignUp() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, email, password }),
       });
 
       const data = await res.json();
@@ -36,6 +37,13 @@ export default function SignUp() {
     <div>
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
+        <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        required
+        /><br />
         <input
           type="email"
           placeholder="Email"
