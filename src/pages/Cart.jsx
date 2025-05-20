@@ -92,7 +92,7 @@ export default function Cart() {
               type="number"
              // min="1"
               value={item.quantity}
-              onChange={(e) => { // Handle blur event, which is when the input loses focus
+              onChange={(e) => { 
                 const val = Number(e.target.value);
                 if (val >= 1) {
                   handleUpdateQuantity(item.productId, val);
