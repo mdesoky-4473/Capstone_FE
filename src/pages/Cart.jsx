@@ -92,9 +92,13 @@ export default function Cart() {
               type="number"
               min="1"
               value={item.quantity}
-              onChange={(e) =>
-                handleUpdateQuantity(item.productId, Number(e.target.value))
-              }
+              onBlur={(e) => { // Handle blur event, which is when the input loses focus
+                const val = Number(e.target.value);
+                if (val >= 1) {
+                  handleUpdateQuantity(item.productId, val);
+                }
+              }}
+              
               style={{ width: "60px", margin: "0 10px" }}
             />
             <button className="primary-button" onClick={() => handleRemove(item.productId)}>Remove</button>

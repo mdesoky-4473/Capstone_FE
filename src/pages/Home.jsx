@@ -10,7 +10,7 @@ export default function Home() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(`${BASE}/api/products`);
-        const data = await response.json(); // <- product data in JSON format
+        const data = await response.json(); 
         setProducts(data); 
       } catch (error) {
         console.error("Error fetching products:", error);

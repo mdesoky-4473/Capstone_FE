@@ -8,8 +8,6 @@ export default function Login() {
 
   const handleLogin = async (e) => {
 
-    setMessage("Loading... (backend may be waking up)");
-    
     e.preventDefault();
     try {
       const res = await fetch(`${BASE}/api/auth/login`, {
@@ -37,7 +35,7 @@ export default function Login() {
   
   const handleLogout = () => {
     localStorage.removeItem("token");
-    alert("Logged out!");
+    //alert("Logged out!");
     setMessage("");
     setIsLoggedIn(false); 
   };
