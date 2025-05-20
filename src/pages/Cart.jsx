@@ -90,7 +90,7 @@ export default function Cart() {
             {item.name} — ${item.price} — Quantity:
             <input
               type="number"
-              min="1"
+             // min="1"
               value={item.quantity}
               onChange={(e) => { // Handle blur event, which is when the input loses focus
                 const val = Number(e.target.value);
