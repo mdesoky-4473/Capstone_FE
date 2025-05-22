@@ -51,16 +51,20 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Sports Gear Products</h1>
-      {message && <p style={{ color: "green" }}>{message}</p>}
-      <ul>
-        {products.map((item) => (
-          <li key={item.id} className="product-row">
-            {item.name} - ${item.price}{" "}
-            <button className="primary-button" onClick={() => handleAddToCart(item.id)}>Add to Cart</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <h1>Sports Gear Products</h1>
+    {message && <p style={{ color: "green" }}>{message}</p>}
+    <ul style={{ listStyle: "none", padding: 0 }}>
+      {products.map((item) => (
+        <li key={item.id} className="product-row" style={{ marginBottom: "20px" }}>
+          <img src={item.image_url} alt={item.name} style={{ width: "150px", height: "150px", objectFit: "cover", marginRight: "10px" }} />
+          <div>
+            <strong>{item.name}</strong> - ${item.price}
+          </div>
+          <button className="primary-button" onClick={() => handleAddToCart(item.id)}> Add to Cart </button>
+        </li>
+      ))}
+    </ul>
+  </div>
+  
   );
 }

@@ -40,10 +40,12 @@ li {
 
 .product-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  gap: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
 }
+
 
 .primary-button {
   font-family: inherit;
